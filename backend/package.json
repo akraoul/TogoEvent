@@ -5,39 +5,22 @@
   "main": "server-fastify-simple.js",
   "scripts": {
     "start": "node server-fastify-simple.js",
-    "dev": "nodemon server-fastify-simple.js",
-    "start:express": "node server.js",
-    "dev:express": "nodemon server.js",
-    "start:fastify": "node server-fastify.js",
-    "dev:fastify": "nodemon server-fastify.js",
-    "init-db": "node scripts/init-database.js"
+    "dev": "nodemon server-fastify-simple.js"
   },
   "keywords": [
     "togo",
     "events",
     "culture",
     "ticketing",
-    "api"
+    "api",
+    "fastify"
   ],
   "author": "TogoEvents Team",
   "license": "MIT",
   "dependencies": {
-    "@fastify/cors": "^11.2.0",
-    "@fastify/helmet": "^13.0.2",
-    "@fastify/multipart": "^9.4.0",
-    "@fastify/rate-limit": "^10.3.0",
-    "@fastify/static": "^9.0.0",
-    "bcryptjs": "^2.4.3",
     "better-sqlite3": "^12.8.0",
-    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-rate-limit": "^8.3.1",
-    "express-validator": "^7.3.1",
     "fastify": "^5.8.4",
-    "helmet": "^7.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "morgan": "^1.10.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
