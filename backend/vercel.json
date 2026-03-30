@@ -1,13 +1,7 @@
 {
-  "version": 2,
-  "functions": {
-    "server-fastify-simple.js": {
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/(.*)",
       "destination": "/server-fastify-simple.js"
     }
   ]
