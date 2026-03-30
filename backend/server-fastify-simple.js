@@ -1,19 +1,21 @@
 /**
- * TogoEvents Backend API Server - Fastify Version (Minimal)
+ * TogoEvents Backend API Server - Version optimisée pour Vercel
  */
 
-const fastify = require('fastify')({ logger: false });
+const fastify = require('fastify')({ logger: true });
 const Database = require('better-sqlite3');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 require('dotenv').config();
 
-const port = process.env.PORT || 8000;
-const dbPath = path.join(__dirname, 'togoevents.db');
+const port = process.env.PORT || 8001;
+const dbPath = process.env.NODE_ENV === 'production' 
+  ? path.join('/tmp', 'togoevents.db') 
+  : path.join(__dirname, 'togoevents.db');
 
 // Initialisation de la base de données
 const db = new Database(dbPath);
-console.log('✅ Base de données SQLite connectée');
+console.log(`✅ Base de données SQLite connectée sur: ${dbPath}`);
 
 // Création des tables
 db.exec(`
