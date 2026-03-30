@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   TicketIcon,
-  BuildingOfficeIcon,
-  SparklesIcon,
   ChevronRightIcon
 } from '@heroicons/react/24/outline';
 import EventCard from '../components/EventCard.tsx';
@@ -260,7 +258,7 @@ const HomePage: React.FC = () => {
     } else {
       applyFilters(filters);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory, filters]);
 
   const handleCategoryChange = (categorySlug: string) => {
     setSelectedCategory(categorySlug === selectedCategory ? '' : categorySlug);

@@ -3,11 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeftIcon,
   PhotoIcon,
-  MapPinIcon,
-  CalendarIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
-  TicketIcon,
   PlusIcon,
   XMarkIcon,
   CheckIcon,
@@ -54,14 +49,6 @@ interface Category {
   slug: string;
   icon: string;
   color: string;
-}
-
-interface Venue {
-  id: string;
-  name: string;
-  address: string;
-  city: string;
-  capacity: number;
 }
 
 const CreateEventPage: React.FC = () => {
@@ -112,15 +99,6 @@ const CreateEventPage: React.FC = () => {
     { id: '4', name: 'Danse', slug: 'danse', icon: '💃', color: '#ec4899' },
     { id: '5', name: 'Exposition', slug: 'exposition', icon: '🎨', color: '#8b5cf6' },
     { id: '6', name: 'Autre', slug: 'autre', icon: '📅', color: '#6b7280' }
-  ];
-
-  const mockVenues: Venue[] = [
-    { id: '1', name: 'Palais des Congrès', address: 'Boulevard de la Marina, Lomé', city: 'Lomé', capacity: 2000 },
-    { id: '2', name: 'Centre Culturel Français', address: 'Rue du Commerce, Lomé', city: 'Lomé', capacity: 500 },
-    { id: '3', name: 'Stade de Kégué', address: 'Route du Bénin, Lomé', city: 'Lomé', capacity: 15000 },
-    { id: '4', name: 'Musée National', address: 'Avenue de l\'Indépendance, Lomé', city: 'Lomé', capacity: 200 },
-    { id: '5', name: 'Place de l\'Indépendance', address: 'Centre-ville, Lomé', city: 'Lomé', capacity: 5000 },
-    { id: '6', name: 'Kara Events Center', address: 'Place du Marché, Kara', city: 'Kara', capacity: 1000 }
   ];
 
   const addTicketType = () => {
@@ -390,7 +368,7 @@ const CreateEventPage: React.FC = () => {
         console.log('Backend non disponible, utilisation du mode démo');
         
         // Simuler la création d'événement avec succès
-        const response = await new Promise((resolve) => {
+        await new Promise((resolve) => {
           setTimeout(() => {
             resolve({
               ok: true,

@@ -17,12 +17,6 @@ const Header: React.FC = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState<'user' | 'organizer' | null>(null);
-  const [currentFilters, setCurrentFilters] = useState({
-    categories: [],
-    location: '',
-    dateRange: '',
-    sortBy: 'popularity'
-  });
   const navigate = useNavigate();
   const location = useLocation();
 

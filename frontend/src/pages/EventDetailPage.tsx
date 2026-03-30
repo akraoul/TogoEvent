@@ -8,7 +8,6 @@ import {
   ClockIcon,
   UserIcon,
   TagIcon,
-  TicketIcon,
   StarIcon,
   HeartIcon,
   ShareIcon,
@@ -17,7 +16,7 @@ import {
   PhoneIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline';
-import { Event, TicketType } from '../types';
+import { Event } from '../types';
 
 // Données mockées - à remplacer par appel API
 const mockEvent: Event = {

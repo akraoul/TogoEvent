@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   PlusIcon,
@@ -42,10 +42,10 @@ const OrganizerDashboardPage: React.FC = () => {
   const [stats, setStats] = useState<Stat[]>([]);
 
   // Données mockées - tous les événements supprimés
-  const mockEvents: Event[] = [];
+  const mockEvents: Event[] = useMemo(() => [], []);
 
   // Données mockées - statistiques remises à zéro
-  const mockStats: Stat[] = [
+  const mockStats: Stat[] = useMemo(() => [
     {
       label: 'Revenus total',
       value: '0 FCFA',
@@ -54,17 +54,17 @@ const OrganizerDashboardPage: React.FC = () => {
       color: 'green'
     },
     {
-      label: 'Événements créés',
+      label: 'Billets vendus',
       value: '0',
       change: 0,
       icon: TicketIcon,
       color: 'blue'
     },
     {
-      label: 'Billets vendus',
+      label: 'Événements actifs',
       value: '0',
       change: 0,
-      icon: UsersIcon,
+      icon: CalendarIcon,
       color: 'purple'
     },
     {
@@ -74,7 +74,7 @@ const OrganizerDashboardPage: React.FC = () => {
       icon: EyeIcon,
       color: 'orange'
     }
-  ];
+  ], []);
 
   useEffect(() => {
     // Nettoyer tous les événements du localStorage
@@ -83,7 +83,7 @@ const OrganizerDashboardPage: React.FC = () => {
     
     setEvents(mockEvents);
     setStats(mockStats);
-  }, []);
+  }, [mockEvents, mockStats]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('fr-TG', {

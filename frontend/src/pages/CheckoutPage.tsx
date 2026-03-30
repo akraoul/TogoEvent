@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { 
   ArrowLeftIcon,
-  CreditCardIcon,
   PhoneIcon,
   ShieldCheckIcon,
-  CheckIcon,
-  XMarkIcon
+  CheckIcon
 } from '@heroicons/react/24/outline';
-import { Event, TicketType } from '../types';
+import { Event } from '../types';
 
 interface CheckoutState {
   eventId: string;
@@ -36,7 +34,7 @@ const CheckoutPage: React.FC = () => {
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
   // Données mockées pour l'événement
-  const mockEvent: Event = {
+  const mockEvent: Event = useMemo(() => ({
     id: '1',
     title: '🔥 LA FOUINE EN CONCERT – YAFOHI NATION EXPERIENCE',
     description: 'Soirée exceptionnelle avec LA FOUINE',
@@ -63,7 +61,7 @@ const CheckoutPage: React.FC = () => {
         available: 20, is_sold_out: false, is_on_sale: true
       }
     ]
-  };
+  }), []);
 
   useEffect(() => {
     if (state) {
@@ -71,7 +69,7 @@ const CheckoutPage: React.FC = () => {
       setTotalPrice(state.totalPrice);
     }
     setEvent(mockEvent);
-  }, [state]);
+  }, [state, mockEvent]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('fr-TG', {

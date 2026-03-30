@@ -5,9 +5,7 @@ import { fr } from 'date-fns/locale';
 import { 
   MapPinIcon, 
   CalendarIcon, 
-  ClockIcon,
   UserIcon,
-  TagIcon,
   FireIcon
 } from '@heroicons/react/24/outline';
 import { Event } from '../types';

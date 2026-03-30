@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend TogoEvents - Inspiré de Tikerama",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.48",
@@ -29,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}"
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}",
+    "vercel-build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +56,5 @@
     "@types/qrcode": "^1.5.5",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1"
-  },
-  "proxy": "http://localhost:8001"
+  }
 }
