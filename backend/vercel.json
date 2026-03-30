@@ -2,28 +2,13 @@
   "version": 2,
   "functions": {
     "server-fastify-simple.js": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 10
+      "maxDuration": 30
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/server-fastify-simple.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "DATABASE_PATH": "/tmp/togoevents.db",
-    "PORT": "8001"
-  },
-  "build": {
-    "env": {
-      "VITE_API_URL": "https://togoevent-backend.vercel.app"
-    }
-  }
+  ]
 }
