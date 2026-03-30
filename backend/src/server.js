@@ -11,6 +11,8 @@ const { initializeDatabase } = require('./plugins/db');
 const eventRoutes = require('./routes/events');
 const categoryRoutes = require('./routes/categories');
 const healthRoutes = require('./routes/health');
+const cityRoutes = require('./routes/cities');
+const venueRoutes = require('./routes/venues');
 
 // ====================== INITIALISATION ======================
 initializeDatabase();
@@ -34,6 +36,8 @@ const registerRoutes = async () => {
   await eventRoutes(fastify);
   await categoryRoutes(fastify);
   await healthRoutes(fastify);
+  await cityRoutes(fastify);
+  await venueRoutes(fastify);
   
   console.log('✅ Routes enregistrées');
 };
