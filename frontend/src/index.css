@@ -1,0 +1,200 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-50;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900 dark:text-gray-50;
+  }
+  
+  a {
+    @apply text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-200;
+  }
+  
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  /* Event Cards - Tikerama Style */
+  .event-badge {
+    @apply px-2 py-1 text-xs font-bold rounded-full shadow-sm;
+  }
+  
+  .event-card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden transform hover:scale-[1.01];
+  }
+  
+  .event-card-image {
+    @apply w-full h-32 object-cover;
+  }
+  
+  .event-card-content {
+    @apply p-4;
+  }
+  
+  .event-card-title {
+    @apply font-semibold text-gray-900 text-base mb-2 line-clamp-2;
+  }
+  
+  .event-card-description {
+    @apply text-gray-600 text-sm mb-3 line-clamp-2;
+  }
+  
+  .event-card-meta {
+    @apply flex items-center justify-between text-xs text-gray-500 mb-3;
+  }
+  
+  .event-card-footer {
+    @apply flex items-center justify-between;
+  }
+  
+  .event-badge-promo {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white;
+  }
+  
+  .event-badge-soldout {
+    @apply bg-gradient-to-r from-pink-600 to-pink-700 text-white;
+  }
+  
+  .event-badge-early {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-600 text-white;
+  }
+  
+  /* Boutons principaux style Tikerama */
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white py-2 px-4 rounded-xl font-semibold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-200 py-2 px-4 rounded-xl font-semibold shadow-sm hover:shadow-md hover:bg-gray-50 dark:hover:bg-slate-700 transform hover:scale-105 transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply border border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 py-2 px-4 rounded-xl font-semibold hover:bg-purple-50 dark:hover:bg-purple-900/20 transform hover:scale-105 transition-all duration-200;
+  }
+  
+  /* Champs de formulaire */
+  .input-field {
+    @apply w-full px-4 py-2 border-2 border-gray-300 dark:border-slate-600 rounded-xl focus:ring-4 focus:ring-purple-600/20 focus:border-purple-600 transition-all duration-300;
+    @apply bg-white dark:bg-slate-800 shadow-sm;
+  }
+  
+  .input-field:focus {
+    @apply shadow-lg;
+  }
+  
+  .input-field-error {
+    @apply border-pink-600 ring-4 ring-pink-600/20 bg-pink-50 dark:bg-pink-900/20;
+  }
+  
+  /* Catégories horizontales style Tikerama */
+  .category-pill {
+    @apply px-4 py-2 text-sm font-semibold border-2 border-gray-200 dark:border-slate-600 rounded-full cursor-pointer transition-all duration-200;
+    @apply bg-white dark:bg-slate-800 shadow-sm hover:border-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 transform hover:scale-105;
+  }
+  
+  .category-pill.active {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white border-purple-600 shadow-lg;
+  }
+  
+  .category-pill:not(.active):hover {
+    @apply border-purple-300 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-300;
+  }
+  
+  /* Header style Tikerama */
+  .header-togo {
+    @apply bg-white dark:bg-slate-800 shadow-lg border-b border-gray-100 dark:border-slate-700;
+    @apply backdrop-blur-lg bg-white/95 dark:bg-slate-800/95;
+  }
+  
+  .logo-togo {
+    @apply text-2xl font-bold text-purple-600 dark:text-purple-400;
+    @apply bg-gradient-to-r from-purple-600 to-slate-800 bg-clip-text text-transparent;
+  }
+  
+  /* Footer */
+  .footer-togo {
+    @apply bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700;
+  }
+  
+  /* Compteur de billets */
+  .ticket-counter {
+    @apply text-sm font-semibold bg-purple-50 dark:bg-purple-900/20 px-2 py-1 rounded-full text-purple-600 dark:text-purple-300;
+  }
+  
+  .ticket-counter strong {
+    @apply text-base text-purple-700 dark:text-purple-200;
+  }
+  
+  /* Prix style Tikerama */
+  .price-display {
+    @apply text-lg font-bold text-purple-600 dark:text-purple-400;
+    @apply bg-gradient-to-r from-purple-600 to-slate-800 bg-clip-text text-transparent;
+  }
+  
+  .price-prefix {
+    @apply text-sm font-normal text-gray-500;
+  }
+  
+  /* Lieu et date */
+  .event-meta {
+    @apply text-sm text-gray-600 dark:text-gray-300 flex items-center gap-1;
+  }
+  
+  .event-meta-icon {
+    @apply w-4 h-4 text-gray-400 dark:text-gray-500;
+  }
+  
+  /* Bouton d'abonnement */
+  .btn-subscribe {
+    @apply bg-slate-800 dark:bg-slate-700 hover:bg-slate-900 dark:hover:bg-slate-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  /* Loader */
+  .loader {
+    @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+  }
+  
+  /* Responsive mobile-first */
+  @media (max-width: 640px) {
+    .event-card {
+      @apply rounded-none shadow-none border-b border-gray-200;
+    }
+    
+    .event-card-image {
+      @apply h-24;
+    }
+    
+    .btn-primary {
+      @apply w-full py-4 text-base;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-slate-800 bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-togo {
+    @apply bg-gradient-to-br from-purple-600 via-slate-800 to-emerald-600;
+  }
+  
+  .shadow-togo {
+    box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.1), 0 2px 4px -1px rgba(124, 58, 237, 0.06);
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Concert Test Final",
+  "shortDescription": "Test du backend réorganisé",
+  "categoryId": "1",
+  "venueName": "Palais des Congrès",
+  "venueAddress": "Place de l'Indépendance, Lomé",
+  "startDate": "2024-12-25T19:00:00",
+  "endDate": "2024-12-25T23:00:00",
+  "isFree": false,
+  "minPrice": 5000,
+  "maxPrice": 15000,
+  "totalCapacity": 500,
+  "ticketTypes": [
+    {
+      "name": "Standard",
+      "price": 5000,
+      "quantity": 300
+    },
+    {
+      "name": "VIP",
+      "price": 15000,
+      "quantity": 200
+    }
+  ],
+  "isFeatured": true,
+  "isPromo": false
+}
